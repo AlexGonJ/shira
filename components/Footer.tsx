@@ -1,0 +1,6 @@
+import Image from 'next/image';
+import BlurText from '@/components/BlurText';
+import ScrollReveal from '@/components/ScrollReveal';
+export default function Footer() {
+  return <footer className="footer wrap"><ScrollReveal className="image-reveal"><Image src="/landscapes/garden-concept.webp" alt="" fill sizes="100vw" className="footer-photo" /></ScrollReveal><div className="footer-overlay" /><div className="footer-top"><div><p className="eyebrow light">A BEAUTIFUL OUTSIDE. A BETTER EVERYDAY.</p><h2><BlurText text="Let’s create your" /><BlurText text="favorite place." startDelay={120} className="footer-title-accent" /></h2></div><a href="#contact" className="button button-lime">Start your project</a></div><div className="footer-bottom"><a href="#" aria-label="Shira home"><Image src="/logo.png" alt="Shira Landscaping & Build" width={176} height={70} /></a><div><span>GREATER BOSTON, MA</span><a href="tel:+17813302608">(781) 330-2608</a></div><div><a href="mailto:shiralandscaping@gmail.com">shiralandscaping@gmail.com</a><span>© {new Date().getFullYear()} Shira Landscaping & Build</span></div><a href="#" className="back-top" aria-label="Back to top">↑</a></div></footer>;
+}
