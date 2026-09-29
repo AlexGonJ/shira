@@ -81,9 +81,11 @@ export default function PillNav({ logo, logoAlt, items, phoneHref, phoneLabel }:
     </nav>
     <a href={phoneHref} className="pill-nav-phone" aria-label={`Call Shira at ${phoneLabel}`}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="m7 3 3 5-3 3c2 3 3 4 6 6l3-3 5 3c-1 4-3 5-6 3C8 17 4 13 3 7c0-2 1-4 4-4Z" /></svg><span><small>Call Us</small><strong>{phoneLabel}</strong></span></a>
     <button className="pill-nav-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="pill-mobile-menu" onClick={() => setOpen(value => !value)}><span /><span /></button>
-    <div id="pill-mobile-menu" className="pill-mobile-menu" ref={menuRef} aria-hidden={!open}>
-      {items.map(item => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
-      <a href="#contact" onClick={() => setOpen(false)}>Get a free quote</a>
+    <div id="pill-mobile-menu" className="pill-mobile-menu" ref={menuRef} aria-hidden={!open} inert={!open}>
+      <nav aria-label="Mobile navigation">
+        {items.map(item => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
+        <a href="#contact" onClick={() => setOpen(false)}>Get a free quote</a>
+      </nav>
     </div>
   </div>;
 }

@@ -61,8 +61,8 @@ export default function BlurText({
 
   const keyframes = buildKeyframes(from, to);
   const finalFrame = to[to.length - 1];
-  return <span ref={ref} className={`blur-text ${className}`} aria-label={text}>
-    {elements.map((segment, index) => {
+  return <span ref={ref} className={`blur-text ${className}`}>
+    <span className="blur-text-visual" aria-hidden="true">{elements.map((segment, index) => {
       const transition: Transition = {
         duration:reduceMotion ? 0.9 : stepDuration * 2,
         times:[0, 0.5, 1],
@@ -71,7 +71,7 @@ export default function BlurText({
       };
       const target = isVisible ? keyframes : hasScrolled ? from : finalFrame;
       const wordTransition = !hasScrolled || !isVisible ? { duration:0 } : transition;
-      return <motion.span aria-hidden="true" key={`${segment}-${index}`} initial={finalFrame} animate={target} transition={wordTransition} style={{display:'inline-block', willChange:'transform, filter, opacity'}}>{segment}{animateBy === 'words' && index < elements.length - 1 ? '\u00A0' : ''}</motion.span>;
-    })}
+      return <motion.span key={`${segment}-${index}`} initial={finalFrame} animate={target} transition={wordTransition} style={{display:'inline-block', willChange:'transform, filter, opacity'}}>{segment}{animateBy === 'words' && index < elements.length - 1 ? '\u00A0' : ''}</motion.span>;
+    })}</span><span className="sr-only">{text}</span>
   </span>;
 }

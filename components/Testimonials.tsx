@@ -42,7 +42,7 @@ export default function Testimonials() {
         <div>
           <h2 id="testimonials-title"><BlurText text="Why our clients keep" /><BlurText text="coming back." startDelay={130} className="muted-title-line" /></h2>
         </div>
-        <div className="testimonial-controls" aria-label="Testimonial navigation">
+        <div className="testimonial-controls" role="group" aria-label="Testimonial navigation">
           <button type="button" onClick={() => move(-1)} aria-label="Previous testimonial">←</button>
           <button type="button" onClick={() => move(1)} aria-label="Next testimonial">→</button>
         </div>
@@ -51,7 +51,7 @@ export default function Testimonials() {
       <div className="testimonial-cards" aria-live="polite">
         {visible.map((review, index) => <article className={`testimonial-card${index === 1 ? ' is-featured' : ''}`} key={`${review.name}-${active}-${index}`}>
           <span className="testimonial-quote" aria-hidden="true">“</span>
-          <div className="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <span className="testimonial-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
           <blockquote>“{review.text}”</blockquote>
           <footer>
             <span className="testimonial-avatar" aria-hidden="true">{review.initials}</span>

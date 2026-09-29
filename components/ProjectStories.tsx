@@ -17,7 +17,7 @@ export default function ProjectStories() {
         return <article className={`story-card${story.videoSlot ? ' story-featured' : ''}`} key={story.id}>
           <div className="story-media">
             {active ? <iframe src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`} title={story.title} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /> : <>
-              <ScrollReveal className="image-reveal"><Image src={story.image} alt={story.alt} fill unoptimized={story.image.startsWith('https://i.ytimg.com/')} sizes="(max-width: 760px) 90vw, 55vw" /></ScrollReveal>
+              <ScrollReveal className="image-reveal"><Image src={story.image} alt={story.alt} fill quality={70} unoptimized={story.image.startsWith('https://i.ytimg.com/')} sizes={`(max-width: 760px) calc(100vw - 64px), ${story.videoSlot ? '48vw' : '34vw'}`} /></ScrollReveal>
               {id ? <button className="story-play" onClick={() => setPlaying(story.id)} aria-label={`Play video: ${story.title}`}><span aria-hidden="true">▶</span> Watch film</button> : story.videoSlot ? <span className="story-coming">Project films · Coming soon</span> : null}
             </>}
           </div>

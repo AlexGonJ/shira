@@ -564,3 +564,19 @@ h2>.muted-title-line { color:#8d908b; }
   .pill-mobile-menu a:hover,.pill-mobile-menu a:focus-visible { background:var(--lime); color:var(--ink); }
   .pill-mobile-menu a:last-child { background:var(--lime); color:var(--ink); }
 }
+
+/* Accessibility and responsive image polish informed by PageSpeed's desktop/mobile audits. */
+.blur-text-visual { display:flex; flex-wrap:wrap; width:fit-content; max-width:100%; color:inherit; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.pill-nav-phone,.pill-nav-phone:hover,.pill-nav-phone svg { color:#292b2a; }
+.about-values { color:#655000; }
+h2>.muted-title-line,.testimonials-head h2 span { color:#626963; }
+.testimonial-stars { color:#08752b; }
+.testimonial-card footer small,.testimonial-person div span { color:#555e58; }
+.testimonial-source { color:#4d5851; }
+.testimonials-status { color:#4d5851; }
+.hero-rating-heading,.hero-rating-count { text-shadow:0 1px 3px #000; }
+.skip-link { background:#292b2a; color:#fff; border:2px solid #f2c744; border-radius:6px; }
+.pill-mobile-menu nav { display:flex; flex-direction:column; gap:4px; }
+.pill-mobile-menu a:last-child { color:#292b2a; }
+.pill-mobile-menu a:last-child:hover,.pill-mobile-menu a:last-child:focus-visible { background:#ffda62; }

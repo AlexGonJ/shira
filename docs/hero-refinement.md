@@ -1,4 +1,4 @@
-# Hero refinement — 2026-09-18
+# Hero refinement — 2026-09-28
 
 The header now sits over the landscape photograph. The upper-right Google rating card and lower-right location card follow the reference composition. Glass surfaces use backdrop blur, translucent tint, inset highlights, a gradient rim and a pointer-following reflection. Reduced-motion preferences disable the moving reflection.
 
@@ -6,7 +6,7 @@ The former polygon border is replaced with a generated, photorealistic botanical
 
 ## Rating source
 
-The public Google reviews widget on https://www.shiralandscaping.com/ displayed **5.0 from 5 reviews**, checked on 2026-09-18. This is a manually verified snapshot, configured in `lib/business-rating.ts`, not a live Google API integration. The card links to the source website. The separate testimonials integration remains pending.
+The Google Maps profile matched by business name and phone displays **4.0 from 4 reviews**, checked on 2026-09-28. `lib/business-rating.ts` keeps that verified snapshot as a fallback, and the hero card links directly to the business profile. `/api/business-rating` reads live Place Details values when the server has `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID`; neither credential is currently configured. Google Place Details supports the requested rating, count, and profile URL fields: https://developers.google.com/maps/documentation/places/web-service/place-details. The separate testimonials integration remains pending.
 
 ## Image generation
 
